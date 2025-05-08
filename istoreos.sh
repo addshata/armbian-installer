@@ -5,7 +5,7 @@ REPO="addshata/armbian-installer"
 TAG="2025-04-30"
 FILE_NAME="istoreos-24.10.0-2025043010-x86-64-squashfs-combined-efi.img.gz"
 OUTPUT_PATH="openwrt/istoreos.img.gz"
-DOWNLOAD_URL=$(curl -s https://fw0.koolcenter.com/iStoreOS/alpha/24.10/x86_64_efi/$TAG | jq -r '.assets[] | select(.name == "'"$FILE_NAME"'") | .browser_download_url')
+DOWNLOAD_URL=$(curl -s https://fw.koolcenter.com/iStoreOS/alpha/24.10/$TAG | jq -r '.assets[] | select(.name == "'"$FILE_NAME"'") | .browser_download_url')
 
 if [[ -z "$DOWNLOAD_URL" ]]; then
   echo "错误：未找到文件 $FILE_NAME"
